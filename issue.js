@@ -19,10 +19,10 @@ const payload = {
 const token = jwt.sign(payload, privateKey, { algorithm: 'RS256', header: header } );
 
 const headers = {
-  Authorization: `Bearer ***`,
+  Authorization: `Bearer $token`,
   'User-Agent': 'SiyaaJhawar',
 };
-const { data: { token: installationToken } } = await axios.post(`https://api.github.com/app/installations/34148902/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`, {}, { headers: { Authorization: `Bearer ${token}` } });
+
 
 
 
