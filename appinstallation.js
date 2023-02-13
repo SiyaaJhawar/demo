@@ -1,7 +1,10 @@
 
 const axios = require("axios");
+const appId = process.env.APP_ID;
+const installationId = process.env.INSTALLATION_ID;
+const privateKey = process.env.PRIVATE_KEY;
 
-async function createInstallationToken(appId, privateKey, INSTALLATION_ID) {
+async function createInstallationToken(appId, privateKey, installation_Id) {
   const jwt = require("jsonwebtoken");
 
   const now = Math.floor(Date.now() / 1000);
@@ -12,7 +15,7 @@ async function createInstallationToken(appId, privateKey, INSTALLATION_ID) {
   };
   const token = jwt.sign(payload, privateKey, { algorithm: "RS256" });
 
-  const response = await axios.post(`https://api.github.com/app/installations/34148902/access_tokens`, {}, {
+  const response = await axios.post(`https://api.github.com/app/installations/ process.env.INSTALLATION_ID/access_tokens`, {}, {
     headers: {
       Accept: "application/vnd.github+json",
       Authorization: `Bearer ${token}`
