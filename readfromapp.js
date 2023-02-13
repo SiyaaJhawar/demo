@@ -9,6 +9,6 @@ async function getRepository(owner, repo, token) {
   return response.data;
 }
 
-getRepository("SiyaaJhawar", "demo", "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").then(repository => {
+getRepository("SiyaaJhawar", "demo", "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").then(repository => {
   console.log(repository);
 });
