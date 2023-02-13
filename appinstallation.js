@@ -8,7 +8,7 @@ async function createInstallationToken(appId, privateKey, INSTALLATION_ID) {
   const payload = {
     iat: now,
     exp: now + (10 * 60),
-    iss: appId
+    iss: 292855
   };
   const token = jwt.sign(payload, privateKey, { algorithm: "HS256" });
 
