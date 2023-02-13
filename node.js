@@ -10,7 +10,7 @@ async function authenticate() {
   const encryptedPrivateKey = fs.readFileSync("private.key.enc", "utf-8");
 
 
-  const privateKey = await decrypt(encryptedPrivateKey);
+
 
 
   const header = {
