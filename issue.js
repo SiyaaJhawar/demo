@@ -26,7 +26,7 @@ const headers = {
 
 
 
-console.log(data);
+
 axios
   .post('https://api.github.com/repos/SiyaaJhawar/learning-/issues', {
     title: 'Hi',
