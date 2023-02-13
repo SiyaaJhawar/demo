@@ -1,18 +1,47 @@
-const axios = require("axios");
+const axios = require('axios');
 
-async function createIssue(owner, repo, title, body, token) {
-  const response = await axios.post(`https://api.github.com/repos/SiyaaJhawar/demo/issues`, {
-    title: Hello,
-    body: This is a issue 
-  }, {
-    headers: {
-      Authorization: `Token ${token}`,
-      "User-Agent": "MyGitHubApp"
-    }
-  });
-  return response.data;
+const appId = process.env.APP_ID;
+const installationId = process.env.INSTALLATION_ID;
+const privateKey = process.env.PRIVATE_KEY;
+
+async function createIssue(repo, issueTitle, issueBody) {
+
+  const jwt = require('jsonwebtoken');
+  const now = Math.floor(Date.now() / 1000);
+  const payload = {
+    iat: now,
+    exp: now + (10 * 60),
+    iss:  process.env.APP_ID,
+  };
+  const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
+
+ 
+  const response = await axios.post(
+    `https://api.github.com/app/installations/process.env.INSTALLATION_ID/access_tokens`,
+    {},
+    {
+      headers: {
+        Accept: 'application/vnd.github+json',
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  );
+  const accessToken = response.data.token;
+
+ 
+  await axios.post(
+    `https://api.github.com/repos/SiyaaJhawar/demo/issues`,
+    {
+      title: Hi,
+      body: issueBody,
+    },
+    {
+      headers: {
+        Accept: 'application/vnd.github+json',
+        Authorization: `Token ${accessToken}`,
+      },
+    },
+  );
 }
 
-createIssue("SiyaaJhawar", "demo", "Hello", "Issue body", "TOKEN").then(issue => {
-  console.log(issue);
-});
+createIssue('owner/repo', 'Issue Title', 'Issue Body');
