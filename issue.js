@@ -18,17 +18,7 @@ async function createIssue(repo, issueTitle, issueBody) {
   const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
 
  
-  const response = await axios.post(
-    `https://api.github.com/app/installations/34148902/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`,
-    {},
-    {
-      headers: {
-        Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${token}`,
-      },
-    },
-  );
-  const accessToken = response.data.token;
+
 
  
   await axios.post(
