@@ -4,7 +4,7 @@ const fs = require("fs");
 const appId = 292855;
 const installationId = 34148902;
 const privateKey =  fs.readFileSync("private.key.enc", "utf-8");
-const access_tokens=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;
+//const access_tokens=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;
 
 async function createIssue(repo, issueTitle, issueBody) {
 
