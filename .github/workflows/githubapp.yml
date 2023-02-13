@@ -6,7 +6,8 @@ on:
   workflow_dispatch:
  
 
-
+env:
+   TOKEN: ${{ secrets.TOKEN}}
 
 
 jobs:
