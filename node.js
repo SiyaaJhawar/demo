@@ -7,7 +7,7 @@ async function authenticate() {
   const apiUrl = "https://api.github.com";
 
 
-  const encryptedPrivateKey = fs.readFileSync("private.key.enc", "utf-8");
+  const privateKey = fs.readFileSync("private.key.enc", "utf-8");
 
 
 
