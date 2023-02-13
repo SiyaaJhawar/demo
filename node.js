@@ -1,32 +1,22 @@
-const fs = require("fs");
-const jwt = require("jsonwebtoken");
+const axios = require("axios");
 
-async function authenticate() {
-  
-  const appId = 292855;
-  const apiUrl = "https://api.github.com";
+async function makeApiRequest() {
+  const accessToken = await authenticate();
 
+  try {
+    const response = await axios.get(`https://api.github.com/repos/SiyaaJhawar/demo/issues`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    });
 
-  const privateKey = fs.readFileSync("private.key.enc", "utf-8");
-
-
-
-
-
-  const header = {
-    alg: "RS256",
-    typ: "JWT"
-  };
-  const payload = {
-    iat: Math.floor(Date.now() / 1000),
-    exp: Math.floor(Date.now() / 1000) + (10 * 60), // expires in 10 minutes
-    iss: appId
-  };
-  const jwtToken = jwt.sign(payload, privateKey, { algorithm: "RS256", header });
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-
-authenticate();
+makeApiRequest();
 
 
 
