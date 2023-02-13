@@ -18,7 +18,7 @@ async function createIssue(repo, issueTitle, issueBody) {
 
  
   const response = await axios.post(
-    `https://api.github.com/app/installations/process.env.INSTALLATION_ID/process.env.TOKEN`,
+    `https://api.github.com/app/installations/INSTALLATION_ID/TOKEN`,
     {},
     {
       headers: {
@@ -39,7 +39,7 @@ async function createIssue(repo, issueTitle, issueBody) {
     {
       headers: {
         Accept: 'application/vnd.github+json',
-        Authorization: `Token ${accessToken}`,
+        Authorization: `$TOKEN`,
       },
     },
   );
