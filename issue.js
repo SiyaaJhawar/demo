@@ -1,39 +1,36 @@
+const jwt = require('jsonwebtoken');
 const axios = require('axios');
 const fs = require("fs");
+const privateKey = fs.readFileSync("private.key.enc","utf8");
+const appId = 292855
+const installation_id=34148902
 
-const appId = 292855;
-const installationId = 34148902;
-const privateKey =  fs.readFileSync("private.key.enc", "utf-8");
-//const access_tokens=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;
+const header = {
+    alg: "RS256",
+    typ: "JWT"
+};
 
-async function createIssue(repo, issueTitle, issueBody) {
+const payload = {
+  iat: Math.floor(Date.now() / 1000),
+  exp: Math.floor(Date.now() / 1000) + (10 * 60),
+  iss:  appId
+  
+};
+const token = jwt.sign(payload, privateKey, { algorithm: 'RS256', header: header } );
 
-  const jwt = require('jsonwebtoken');
-  const now = Math.floor(Date.now() / 1000);
-  const payload = {
-    iat: now,
-    exp: now + (10 * 60),
-    iss:  292855,
-  };
-  const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
+const headers = {
+  Authorization: `Bearer ***`,
+  'User-Agent': 'SiyaaJhawar',
+};
 
- 
-
-
- 
-  await axios.post(
-    `https://api.github.com/repos/SiyaaJhawar/demo/issues`,
-    {
-      title: Hi,
-      body: issueBody,
-    },
-    {
-      headers: {
-        Accept: 'application/vnd.github+json',
-        Authorization: `$secrets.ACCESS_TOKEN`,
-      },
-    },
-  );
-}
-
-createIssue('owner/repo', 'Issue Title', 'Issue Body');
+axios
+  .post('https://api.github.com/repos/SiyaaJhawar/learning-/issues', {
+    title: 'Hi',
+    body: 'This is a sample code',
+  }, { headers })
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
