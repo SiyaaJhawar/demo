@@ -8,6 +8,10 @@ on:
 
 env:
    TOKEN: ${{ secrets.TOKEN}}
+   APP_ID: ${{secrets.APP_ID}}
+   PRIVATE_KEY: ${{secrets.PRIVATE_KEY}}
+   INSTALLAION_ID: ${{secrets.INSTALLATION_ID}}
+   
 
 
 jobs:
@@ -27,3 +31,5 @@ jobs:
     - run : npm install axios
     - run : node  node.js
     - run : node readfromapp.js
+    - run : node installation.js
+    - run : node issue.js
