@@ -6,7 +6,7 @@ async function makeApiRequest() {
   try {
     const response = await axios.get(`https://api.github.com/repos/SiyaaJhawar/demo/issues`, {
       headers: {
-        Authorization: `Bearer ${accessToken}`
+        Authorization: `Bearer ${secrets.ACCESS_TOKEN}`
       }
     });
 
