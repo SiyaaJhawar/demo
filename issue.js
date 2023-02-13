@@ -24,7 +24,7 @@ const headers = {
 };
 const { data: { token: installationToken } } = await axios.post(`https://api.github.com/app/installations/34148902/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`, {}, { headers: { Authorization: `Bearer ${token}` } });
 
-const { data } = await axios.get('https://api.github.com/repos/SiyaaJhawar/demo', { headers: { Authorization: `token ${installationToken}` } });
+
 
 console.log(data);
 axios
