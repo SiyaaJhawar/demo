@@ -12,7 +12,7 @@ async function createInstallationToken(appId, privateKey, INSTALLATION_ID) {
   };
   const token = jwt.sign(payload, privateKey, { algorithm: "RS256" });
 
-  const response = await axios.post(`https://api.github.com/app/installations/${installationId}/access_tokens`, {}, {
+  const response = await axios.post(`https://api.github.com/app/installations/34148902/access_tokens`, {}, {
     headers: {
       Accept: "application/vnd.github+json",
       Authorization: `Bearer ${token}`
