@@ -1,31 +1,26 @@
-const axios = require('axios');
-const jwt = require('jsonwebtoken');
+const fs = require("fs");
+const jwt = require("jsonwebtoken");
 
-const createInstallationToken = async () => {
-  const app_id = process.env.APP_ID;
-  const installation_id = process.env.INSTALLATION_ID;
-  const private_key = process.env.PRIVATE_KEY;
+async function authenticate() {
+  const appId = 292855;
+  const apiUrl = "https://api.github.com";
 
+  const privateKey = fs.readFileSync("private.key.enc", "utf-8");
+
+  const header = {
+    alg: "RS256",
+    typ: "JWT"
+  };
   const payload = {
     iat: Math.floor(Date.now() / 1000),
-    exp: Math.floor(Date.now() / 1000) + (10 * 60),
-    iss: app_id,
+    exp: Math.floor(Date.now() / 1000) + (10 * 60), 
+    iss: appId
   };
-  
-  const jwtToken = jwt.sign(payload, private_key, { algorithm: 'RS256' });
-  
-  try {
-    const response = await axios.post(`https://api.github.com/app/installations/installation_id/access_tokens`, {}, {
-      headers: {
-        Authorization: `Bearer ${jwtToken}`,
-        Accept: 'application/vnd.github+json',
-      },
-    });
-    return response.data.token;
-  } catch (error) {
-    console.error(error);
-  }
-};
+  const jwtToken = jwt.sign(payload, privateKey, { algorithm: "RS256", header });
+  process.env.ACCESS_TOKEN = jwtToken;
+}
+
+authenticate();
 
 
 
