@@ -3,6 +3,7 @@ const axios = require('axios');
 const appId = process.env.APP_ID;
 const installationId = process.env.INSTALLATION_ID;
 const privateKey = process.env.PRIVATE_KEY;
+const access_tokens=process.env.TOKEN;
 
 async function createIssue(repo, issueTitle, issueBody) {
 
@@ -17,7 +18,7 @@ async function createIssue(repo, issueTitle, issueBody) {
 
  
   const response = await axios.post(
-    `https://api.github.com/app/installations/process.env.INSTALLATION_ID/access_tokens`,
+    `https://api.github.com/app/installations/process.env.INSTALLATION_ID/process.env.TOKEN`,
     {},
     {
       headers: {
