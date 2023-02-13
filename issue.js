@@ -1,9 +1,9 @@
 const axios = require('axios');
 
-const appId = process.env.APP_ID;
-const installationId = process.env.INSTALLATION_ID;
-const privateKey = process.env.PRIVATE_KEY;
-const access_tokens=process.env.TOKEN;
+const appId = 292855;
+const installationId = 34148902;
+const privateKey =  fs.readFileSync("private.key.enc", "utf-8");
+const access_tokens=$secrets.ACCESS_TOKEN;
 
 async function createIssue(repo, issueTitle, issueBody) {
 
@@ -12,13 +12,13 @@ async function createIssue(repo, issueTitle, issueBody) {
   const payload = {
     iat: now,
     exp: now + (10 * 60),
-    iss:  process.env.APP_ID,
+    iss:  292855,
   };
   const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
 
  
   const response = await axios.post(
-    `https://api.github.com/app/installations/INSTALLATION_ID/TOKEN`,
+    `https://api.github.com/app/installations/34148902/$secrets.ACCESS_TOKEN`,
     {},
     {
       headers: {
@@ -39,7 +39,7 @@ async function createIssue(repo, issueTitle, issueBody) {
     {
       headers: {
         Accept: 'application/vnd.github+json',
-        Authorization: `$TOKEN`,
+        Authorization: `$secrets.ACCESS_TOKEN`,
       },
     },
   );
