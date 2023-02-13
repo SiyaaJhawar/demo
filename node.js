@@ -23,7 +23,7 @@ async function authenticate() {
     iss: appId
   };
   const jwtToken = jwt.sign(payload, privateKey, { algorithm: "RS256", header });
-
+}
 
 
 authenticate();
