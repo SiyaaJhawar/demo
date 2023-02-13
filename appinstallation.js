@@ -10,7 +10,7 @@ async function createInstallationToken(appId, privateKey, INSTALLATION_ID) {
     exp: now + (10 * 60),
     iss: 292855
   };
-  const token = jwt.sign(payload, privateKey, { algorithm: "HS256" });
+  const token = jwt.sign(payload, privateKey, { algorithm: "RS256" });
 
   const response = await axios.post(`https://api.github.com/app/installations/34148902/access_tokens`, {}, {
     headers: {
