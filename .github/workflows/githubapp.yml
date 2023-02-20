@@ -30,7 +30,7 @@ jobs:
     - run : npm install jsonwebtoken
     - run : npm install axios
     - run : |
-        $ curl -i -X GET \
+          curl -i -X GET \
             -H "Authorization: Bearer YOUR_JWT" \
             -H "Accept: application/vnd.github+json" \
              https://api.github.com/app/installations
