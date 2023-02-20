@@ -28,7 +28,7 @@ const headers = {
 
 
 axios
-  .post('https://api.github.com/repos/SiyaaJhawar/learning-/issues', {
+  .post('https://api.github.com/repos/SiyaaJhawar/demo/issues', {
     title: 'Hi',
     body: 'This is a sample code',
   }, { headers })
