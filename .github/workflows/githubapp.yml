@@ -8,9 +8,9 @@ on:
 
 env:
   # ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN}}
-   APP_ID: ${{secrets.APP_ID}}
-   PRIVATE_KEY: ${{secrets.PRIVATE_KEY}}
-   INSTALLAION_ID: ${{secrets.INSTALLATION_ID}}
+   #APP_ID: ${{secrets.APP_ID}}
+  # PRIVATE_KEY: ${{secrets.PRIVATE_KEY}}
+   #INSTALLAION_ID: ${{secrets.INSTALLATION_ID}}
    
 
 
