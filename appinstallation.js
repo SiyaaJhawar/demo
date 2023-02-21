@@ -1,26 +1,39 @@
-const fs = require("fs");
-const jwt = require("jsonwebtoken");
+const axios = require('axios');
 
-async function authenticate() {
-  const appId = 292855;
-  const apiUrl = "https://api.github.com";
 
-  const privateKey = fs.readFileSync("private.key.enc", "utf-8");
+const installationId = 292855;
 
-  const header = {
-    alg: "RS256",
-    typ: "JWT"
-  };
-  const payload = {
-    iat: Math.floor(Date.now() / 1000),
-    exp: Math.floor(Date.now() / 1000) + (10 * 60), 
-    iss: appId
-  };
-  const jwtToken = jwt.sign(payload, privateKey, { algorithm: "RS256", header });
 
-}
+const accessToken = ***;
 
-authenticate();
+
+const title = 'Example issue';
+const body = 'This is an example issue created using the GitHub API.';
+
+
+axios.post(`https://api.github.com/repos/SiyaaJhawar/demo/issues`, {
+  title: title,
+  body: body
+}, {
+  headers: {
+    'Authorization': `token ${accessToken}`,
+    'Accept': 'application/vnd.github.v3+json',
+    'User-Agent': 'SiyaaJhawar App',
+    'X-OAuth-Scopes': 'demo',
+    'X-Accepted-OAuth-Scopes': 'demo'
+  }
+})
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+
+
+
+
 
 
 
