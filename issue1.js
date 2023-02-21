@@ -5,7 +5,7 @@ const owner = 'SiyaaJhawar';
 const repo = 'demo';
 
 
-const accessToken = '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';
+const accessToken = '***';
 
 
 axios.get(`https://api.github.com/repos/SiyaaJhawar/demo/issues`, {
