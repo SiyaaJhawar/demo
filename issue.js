@@ -3,7 +3,7 @@ const fs = require('fs');
 const jwt = require('jsonwebtoken');
 
 
-const privateKey = fs.readFileSync('private-key.pem');
+const privateKey = fs.readFileSync('private.key.enc');
 
 
 const appId = 292855;
