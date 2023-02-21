@@ -4,7 +4,7 @@ const axios = require('axios');
 const installationId = 292855;
 
 
-const accessToken = ***;
+const accessToken = '***';
 
 
 const title = 'Example issue';
