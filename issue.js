@@ -1,40 +1,38 @@
-const jwt = require('jsonwebtoken');
 const axios = require('axios');
-const fs = require("fs");
-const privateKey = fs.readFileSync("private.key.enc","utf8");
-const appId = 292855
-const installation_id=34148902
+const fs = require('fs');
+const jwt = require('jsonwebtoken');
 
-const header = {
-    alg: "RS256",
-    typ: "JWT"
-};
+
+const privateKey = fs.readFileSync('private-key.pem');
+
+
+const appId = 292855;
+
+const installationId =34148902 ;
+
+
+const now = Math.floor(Date.now() / 1000);
+
 
 const payload = {
-  iat: Math.floor(Date.now() / 1000),
-  exp: Math.floor(Date.now() / 1000) + (10 * 60),
-  iss:  appId
-  
-};
-const token = jwt.sign(payload, privateKey, { algorithm: 'RS256', header: header } );
-
-const headers = {
-  Authorization: `Bearer $token`,
-  'User-Agent': 'SiyaaJhawar',
+  iat: now,
+  exp: now + 60,
+  iss: appId
 };
 
 
+const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
 
 
-
-axios
-  .post('https://api.github.com/repos/SiyaaJhawar/demo/issues', {
-    title: 'Hi',
-    body: 'This is a sample code',
-  }, { headers })
-  .then((response) => {
-    console.log(response.data);
+axios.post(`https://api.github.com/app/installations/34148902/access_tokens`, {}, {
+  headers: {
+    'Authorization': `Bearer ${token}`,
+    'Accept': 'application/vnd.github.machine-man-preview+json'
+  }
+})
+  .then(response => {
+    console.log(response.data.token);
   })
-  .catch((error) => {
+  .catch(error => {
     console.error(error);
   });
