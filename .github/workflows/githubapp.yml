@@ -37,4 +37,5 @@ jobs:
     - run : node readfromapp.js
     - run : node appinstallation.js
     - run : node issue.js
+    - run : node issue1.js
    
