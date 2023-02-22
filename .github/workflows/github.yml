@@ -1,4 +1,4 @@
-name: My Workflow
+name: My workflow
 
 on: 
   push:
@@ -6,20 +6,24 @@ on:
   workflow_dispatch:
 
 jobs:
-  my_job:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      
 
-      - name: Make API request
-        run: |
-          const octokit = new (require('@octokit/rest'))();
-          octokit.authenticate({
-            type: 'app',
-            token: ${{ steps.auth.outputs.token }}
-          });
-          octokit.users.getAuthenticated({}).then(result => {
-            console.log(result.data.login);
-          });
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+     # run: npm install
+      run : npm install dotenv @octokit/core jsonwebtoken
+
+    - name: Run Node.js script
+      env:
+        APP_ID: ${{ secrets.APP_ID }}
+        PRIVATE_KEY_PATH: ${{ secrets.PRIVATE_KEY_PATH }}
+      run: node github_app.js
