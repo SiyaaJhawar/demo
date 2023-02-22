@@ -27,4 +27,4 @@ jobs:
         APP_ID: ${{ secrets.APP_ID }}
         PRIVATE_KEY_PATH: ${{ secrets.private.key.enc }}
       run: node github_app.js
-    -  run: node issue2.js
+   # -  run: node issue2.js
