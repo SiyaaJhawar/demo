@@ -1,11 +1,11 @@
 require 'jwt'
 
-app_id = 'your_app_id'
+app_id = '292855'
 private_key = File.read('private.key.enc')
 now_seconds = Time.now.to_i
 payload = {
   iat: now_seconds,
-  exp: now_seconds + (10 * 60), # Token is valid for 10 minutes
+  exp: now_seconds + (10 * 60), 
   iss: app_id
 }
 jwt = JWT.encode(payload, private_key, 'RS256')
