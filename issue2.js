@@ -1,3 +1,4 @@
+const { Octokit } = require('@octokit/core')
 const octokit = new Octokit({ auth: token })
 
 octokit.request('POST /repos/:owner/:repo/issues', {
