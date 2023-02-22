@@ -1,0 +1,32 @@
+name: My Workflow
+
+on: 
+  push:
+  
+  workflow_dispatch:
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Authenticate with GitHub API
+        id: auth
+        uses: octokit/auth-action@v1
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.PRIVATE_KEY }}
+          installation_id: ${{ secrets.INSTALLATION_ID }}
+
+      - name: Make API request
+        run: |
+          const octokit = new (require('@octokit/rest'))();
+          octokit.authenticate({
+            type: 'app',
+            token: ${{ steps.auth.outputs.token }}
+          });
+          octokit.users.getAuthenticated({}).then(result => {
+            console.log(result.data.login);
+          });
