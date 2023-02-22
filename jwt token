@@ -1,18 +1,13 @@
-require 'openssl'
-require 'jwt' 
+require 'jwt'
 
-private_pem = File.read("private.key.enc")
-private_key = OpenSSL::PKey::RSA.new(private_pem)
-
-
+app_id = 'your_app_id'
+private_key = File.read('private.key.enc')
+now_seconds = Time.now.to_i
 payload = {
-
-  iat: Time.now.to_i - 60,
-
-  exp: Time.now.to_i + (10 * 60),
-
-  iss: "292855"
+  iat: now_seconds,
+  exp: now_seconds + (10 * 60), # Token is valid for 10 minutes
+  iss: app_id
 }
+jwt = JWT.encode(payload, private_key, 'RS256')
 
-jwt = JWT.encode(payload, private_key, "RS256")
 puts jwt
