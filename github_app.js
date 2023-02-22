@@ -13,7 +13,7 @@ const payload = {
 }
 const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' })
 
-const octokit = new Octokit({ auth:username: 'SiyaaJhawar',password: 'Siyaa@12345'})
+const octokit = new Octokit({ auth:token,username: 'SiyaaJhawar',password: 'Siyaa@12345'})
 octokit.request('GET /user').then(response => {
   console.log(response.data.login)
 })
