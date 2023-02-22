@@ -23,7 +23,7 @@ jobs:
       run : npm install dotenv @octokit/core jsonwebtoken
 
     - name: Run Node.js script
-      env:
+      env:   
         APP_ID: ${{ secrets.APP_ID }}
         PRIVATE_KEY_PATH: ${{ secrets.private.key.enc }}
       run: node github_app.js
