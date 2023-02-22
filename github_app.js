@@ -3,7 +3,7 @@ const { Octokit } = require('@octokit/core')
 const jwt = require('jsonwebtoken')
 
 const appId = process.env.APP_ID
-const privateKey = require('fs').readFileSync(process.env.PRIVATE_KEY_PATH)
+const privateKey = require('fs').readFileSync(process.env.private.key.enc)
 
 const now = Math.floor(Date.now() / 1000)
 const payload = {
