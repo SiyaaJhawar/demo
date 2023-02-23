@@ -8,7 +8,9 @@ const payload = {
 };
 
 
-const privateKey = 'siyaajhawar-app.2023-02-22.private-key';
+const privateKeyPath = '';
+const privateKey = fs.readFileSync(privateKeyPath);';
+
 
 
 const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
