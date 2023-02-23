@@ -10,7 +10,7 @@ if len(sys.argv) > 1:
     pem = sys.argv[1]
 
 else:
-    pem = input(-----BEGIN RSA PRIVATE KEY-----
+    pem = input("
 MIIEpAIBAAKCAQEAzBYlmTriYn8XzmQ0n0HdLei5o/HPP7RIXemGD0hqVOlcbRQk
 Nt3TqTNsu89wu8RWDniwdETbnEtDdRz9NDpnnzCXpVwigKVsPyMqaOJoPMMtC3LD
 gy1PDQqplGJ98DzemcvVlqLNib1vWUQXGpEbXZ7qY9szKZk0kZMVSlc7hGvKR3K3
@@ -36,7 +36,7 @@ PYnDJDon9V17AO5VXQhF6coI1VUwhgkkMxlOGiYTAHIkV38Q6InDlUJiQoq/Cp9G
 tZl33hcCgYBm5JBWdpw5oKEMXJc9z5bKLI4yehnu2q2KsnRmLk9Jy0thL54D/Lf6
 rprLbACioOqy/Q8IxZCyw83mHM3tetzpICgLBNA/EucNyVB6pWv/bvwsD6vox6La
 nmzBhZaIq0njtkPAK5w3e8FsiABb/SisCpVY+IbSMJlu/L+GyDzs9g==
------END RSA PRIVATE KEY-----)    
+")    
 if len(sys.argv) > 2:
     app_id = sys.argv[2]
 else:
