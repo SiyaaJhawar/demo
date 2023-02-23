@@ -15,7 +15,7 @@ jobs:
         python-version: '3.8'
     - name: Install dependencies
       run: |
-        pip install pyyaml pyjwt
+        pip install  pyjwt
       env:
         PYTHONPATH: /usr/local/lib/python3.8/site-packages
     - name: Generate JWT
