@@ -21,8 +21,8 @@ const payload = {
 };
 
 
-const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
-console.log(token)
+const encoded_jwt = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
+//console.log(token)
 console.log(encoded_jwt)
 
 
