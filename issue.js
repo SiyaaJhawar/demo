@@ -18,5 +18,18 @@ const options = { algorithm: 'RS256' };
 const token = jwt.sign(payload, privateKey,options);
 
 console.log(token);
+const jwt = require('jsonwebtoken');
+
+const token = '***';
+
+const publicKey = 'siyaajhawar-app.2023-02-22.private-key'; // or read it from a file or environment variable
+const options = { algorithms: ['RS256'] };
+
+try {
+  const decoded = jwt.verify(token, publicKey, options);
+  console.log(decoded);
+} catch (err) {
+  console.error(err);
+}
 
 
