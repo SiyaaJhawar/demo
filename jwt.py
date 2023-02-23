@@ -11,7 +11,7 @@ if len(sys.argv) > 1:
 else:
   
 
-private_key = os.getenv('PRIVATE_KEY')
+  private_key = os.getenv('PRIVATE_KEY')
 if private_key is not None:
     print("Private key:", private_key)
 else:
