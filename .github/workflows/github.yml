@@ -1,30 +1,26 @@
-name: My workflow
+name: Generate JWT
 
 on: 
-  push:
-  
-  workflow_dispatch:
+ workflow_dispatch:
 
 jobs:
-  build:
+  generate-jwt:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+    - name: Setup Python
+      uses: actions/setup-python@v2
       with:
-        node-version: '14'
-
+        python-version: '3.8'
     - name: Install dependencies
-     # run: npm install
-      run : npm install dotenv @octokit/core jsonwebtoken
-
-    - name: Run Node.js script
-      env:   
+      run: |
+        pip install pyyaml pyjwt
+      env:
+        PYTHONPATH: /usr/local/lib/python3.8/site-packages
+    - name: Generate JWT
+      run: |
+        python jwt.py 
+      env:
+        PEM_PATH: ${{ secrets.PEM_PATH }}
         APP_ID: ${{ secrets.APP_ID }}
-        PRIVATE_KEY_PATH: ${{ secrets.private.key.enc }}
-      run: node github_app.js
-   # -  run: node issue2.js
