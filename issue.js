@@ -18,7 +18,7 @@ const options = { algorithm: 'RS256' };
 const token = jwt.sign(payload, privateKey,options);
 
 console.log(token);
-const jwt = require('jsonwebtoken');
+
 
 const token = '***';
 
