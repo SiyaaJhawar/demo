@@ -21,6 +21,4 @@ jobs:
     - name: Generate JWT
       run: |
         python jwt.py
-      env:
-        PEM_PATH: ${{ secrets.PEM_PATH }}
-        APP_ID: ${{ secrets.APP_ID }}
+    
