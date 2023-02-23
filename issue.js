@@ -8,7 +8,7 @@ const payload = {
 };
 
 
-const privateKey = process.env.PRIVATE_KEY || '-----BEGIN PRIVATE KEY-----\n...';
+const privateKey = process.env.PRIVATE_KEY;
 
 
 const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
