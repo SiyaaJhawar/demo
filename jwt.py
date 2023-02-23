@@ -9,7 +9,7 @@ if len(sys.argv) > 1:
     pem = sys.argv[1]
 else:
     pem = input("~\Downloads\siyaajhawar-app.2023-02-22.private-key")    
-
+ sys.exit()
 if len(sys.argv) > 2:
     app_id = sys.argv[2]
 else:
@@ -17,7 +17,7 @@ else:
 
 with open(pem, 'rb') as pem_file:
     signing_key = jwt.jwk_from_pem(pem_file.read())
-    sys.exit()
+   
     
     
 payload = {
