@@ -23,10 +23,10 @@ console.log(token);
 const encoded_token = '***';
 
 const publicKey = 'siyaajhawar-app.2023-02-22.private-key'; // or read it from a file or environment variable
-const options = { algorithms: ['RS256'] };
+const options1 = { algorithms: ['RS256'] };
 
 try {
-  const decoded = jwt.verify(encoded_token, publicKey, options);
+  const decoded = jwt.verify(encoded_token, publicKey, options1);
   console.log(decoded);
 } catch (err) {
   console.error(err);
