@@ -20,7 +20,7 @@ jobs:
         PYTHONPATH: /usr/local/lib/python3.8/site-packages
     - name: Generate JWT
       run: |
-        python jwt.py 
+        python jwt.py1 
       env:
         PEM_PATH: ${{ secrets.PEM_PATH }}
         APP_ID: ${{ secrets.APP_ID }}
