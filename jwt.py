@@ -6,12 +6,12 @@ import sys
 if len(sys.argv) > 1:
     pem = sys.argv[1]
 else:
-    pem = input("Enter path of private PEM file: ")    
+    pem = input("C:\Users\swgu\Downloads\siyaajhawar-app.2023-02-21.private-key.pem ")    
 
 if len(sys.argv) > 2:
     app_id = sys.argv[2]
 else:
-    app_id = input("Enter your APP ID: ") 
+    app_id = input("292855 ") 
 
 with open(pem, 'rb') as pem_file:
     signing_key = jwt.jwk_from_pem(pem_file.read())
