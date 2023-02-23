@@ -17,4 +17,4 @@ jobs:
        openssl rsa -in siyaajhawar-app.2023-02-22.private-key -pubout -outform DER | openssl sha256 -binary | openssl base64
     - name: Store private key as a secret
       run: |
-        echo "PRIVATE_KEY=$(cat private.key.enc)"
+        echo "PRIVATE_KEY=$(cat siyaajhawar-app.2023-02-22.private-key)"
