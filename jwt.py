@@ -8,7 +8,7 @@ import sys
 if len(sys.argv) > 1:
     pem = sys.argv[1]
 else:
-    pem = input("siyaajhawar-app.2023-02-22.private-key")    
+    pem = input("demo/siyaajhawar-app.2023-02-22.private-key")    
 
 if len(sys.argv) > 2:
     app_id = sys.argv[2]
