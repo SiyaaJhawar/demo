@@ -7,7 +7,7 @@ import os
 if len(sys.argv) > 1:
     pem = sys.argv[1]
 else:
-   pem = os.path.expanduser(r"~\Downloads\siyaajhawar-app.2023-02-22.private-key")
+   pem = os.path.expanduser("siyaajhawar-app.2023-02-22.private-key")
 pem_abs_path = os.path.abspath(pem)
 
 
