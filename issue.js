@@ -23,6 +23,7 @@ const payload = {
 
 const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
 console.log(token)
+console.log(encoded_jwt)
 
 
 axios.post(`https://api.github.com/app/installations/34148902/access_tokens`, {}, {
