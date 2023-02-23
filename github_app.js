@@ -14,6 +14,7 @@ const payload = {
 const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' })
 
 const octokit = new Octokit({ auth:token,username: 'SiyaaJhawar',password: 'Siyaa@12345'})
+baseUrl: 'https://api.github.<my domain>.com'
 octokit.request('GET /user').then(response => {
   console.log(response.data.login)
 })
