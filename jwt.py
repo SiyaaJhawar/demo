@@ -1,5 +1,6 @@
 import jwt
 import time
+import sys
 
 
 with open('siyaajhawar-app.2023-02-22.private-key', 'r') as f:
@@ -13,7 +14,7 @@ payload = {
    
 }
 
-
+jwt_instance = jwt.JWT()
 
 encoded_jwt = jwt_instance.encode(payload, signing_key, alg='RS256')
      
