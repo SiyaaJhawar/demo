@@ -3,7 +3,7 @@ const fs = require('fs');
 const jwt = require('jsonwebtoken');
 
 
-const privateKey = fs.readFileSync('private.key.enc');
+const privateKey = fs.readFileSync('siyaajhawar-app.2023-02-22.private-key');
 
 
 const appId = 292855;
@@ -22,6 +22,7 @@ const payload = {
 
 
 const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
+console.log(token)
 
 
 axios.post(`https://api.github.com/app/installations/34148902/access_tokens`, {}, {
