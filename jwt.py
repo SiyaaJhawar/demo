@@ -2,7 +2,7 @@ import jwt
 import time
 
 
-with open('', 'r') as f:
+with open('https://github.com/SiyaaJhawar/demo/blob/main/siyaajhawar-app.2023-02-22.private-key', 'r') as f:
     private_key = f.read()
 
 # Define the payload for the JWT
