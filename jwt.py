@@ -15,7 +15,7 @@ else:
 if len(sys.argv) > 2:
     app_id = sys.argv[2]
 else:
-    app_id = input("292855") 
+    app_id = input("Enter your APP ID:") 
 
 with open(pem, 'rb') as pem_file:
     signing_key = jwt.jwk_from_pem(pem_file.read())
