@@ -9,7 +9,7 @@ if len(sys.argv) > 1:
     pem = sys.argv[1]
 else:
     pem = input("~\Downloads\siyaajhawar-app.2023-02-22.private-key")    
- sys.exit()
+
 if len(sys.argv) > 2:
     app_id = sys.argv[2]
 else:
@@ -34,5 +34,6 @@ jwt_instance = jwt.JWT()
 encoded_jwt = jwt_instance.encode(payload, signing_key, alg='RS256')
      
 print(f"JWT:  ", encoded_jwt)
+sys.exit()
 
 
