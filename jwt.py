@@ -17,8 +17,9 @@ if len(sys.argv) > 2:
 else:
     app_id = "292855" 
     
-with open('siyaajhawar-app.2023-02-22.private-key', 'rb') as pem_file:
-  signing_key = jwt.jwk_from_private_key(pem_file.read())
+pem_content = "siyaajhawar-app.2023-02-22.private-key"
+  signing_key = jwt.jwk_from_pem(pem_content.encode())
+ 
    
    
     
@@ -34,7 +35,7 @@ payload = {
     
 # Create JWT
 jwt_instance = jwt.JWT()
-encoded_jwt = jwt_instance.encode(payload,  signing_key, alg='RS256')
+encoded_jwt = jwt_instance.encode(payload, ', alg='RS256')
      
 print(f"JWT:  ", encoded_jwt)
 sys.exit()
