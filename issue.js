@@ -1,15 +1,18 @@
-const fs = require('fs');
 const jwt = require('jsonwebtoken');
 
-const privateKeyPath = 'siyaajhawar-app.2023-02-22.private-key';
-const privateKey = fs.readFileSync(privateKeyPath);
 
-const payload = { data: 'example data' };
-const options = { algorithm: 'RS256' };
+const payload = {
+  iss: '292855',
+  iat: Math.floor(Date.now() / 1000),
+  exp: Math.floor(Date.now() / 1000) + (10 * 60),
+};
 
 
-const encodedJWT = jwt.sign(payload, privateKey, options);
+const privateKey = process.env.PRIVATE_KEY || '-----BEGIN PRIVATE KEY-----\n...';
 
-console.log(encodedJWT);
+
+const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
+
+console.log(token);
 
 
