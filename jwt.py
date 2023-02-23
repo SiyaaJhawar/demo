@@ -18,7 +18,7 @@ else:
     app_id = "292855" 
     
 with open('siyaajhawar-app.2023-02-22.private-key', 'rb') as pem_file:
-  signing_key = jwt.jwk_from_'siyaajhawar-app.2023-02-22.private-key'(pem_file.read())
+  signing_key = jwt.jwk_from_private_key(pem_file.read())
    
    
     
