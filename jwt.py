@@ -4,12 +4,18 @@
 import jwt
 import time 
 import sys
+ import os
 
 if len(sys.argv) > 1:
     pem = sys.argv[1]
 else:
-    pem = input("~/Downloads/siyaajhawar-app.2023-02-22.private-key.pem")    
+  
 
+private_key = os.getenv('PRIVATE_KEY')
+if private_key is not None:
+    print("Private key:", private_key)
+else:
+    print("PRIVATE_KEY environment variable is not set.")
 if len(sys.argv) > 2:
     app_id = sys.argv[2]
 else:
