@@ -26,15 +26,4 @@ const encoded_jwt = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
 console.log(encoded_jwt)
 
 
-axios.post(`https://api.github.com/app/installations/34148902/access_tokens`, {}, {
-  headers: {
-    'Authorization': `Bearer ${token}`,
-    'Accept': 'application/vnd.github.machine-man-preview+json'
-  }
-})
-  .then(response => {
-    console.log(response.data.token);
-  })
-  .catch(error => {
-    console.error(error);
-  });
+
