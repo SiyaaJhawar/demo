@@ -25,9 +25,10 @@ print(app_id)
     
 # pem_file = "siyaajhawar-app.2023-02-22.private-key.pem"
 with open(pem_file, 'rb') as pem:
-  pem_content = pem.read()
-  signing_key = jwk.JWK.from_pem(pem_content)
-  print(pem_content)
+  # pem_content = pem.read()
+  priv_rsakey = RSA.importKey(pem.read())
+  signing_key = jwk.JWK.from_pem(priv_rsakey)
+  print(priv_rsakey)
   print(signing_key)
     
 payload = {
