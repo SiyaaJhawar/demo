@@ -15,9 +15,9 @@ jobs:
         python-version: '3.8'
     - name: Install dependencies
       run: |
-        #pip install JWT
+        #pip install jwt
         pip install jwcrypto
-        pip install jwt
+        pip install JWT
         run: |
         $ curl -i -X POST \
              -H "Authorization: Bearer ***" \
