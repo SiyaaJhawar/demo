@@ -51,7 +51,7 @@ private_key = rsa.generate_private_key(
 
 
 
-token = jwt.encode(payload, private_key, algorithm='RS256')
+token = jwt.encode(payload, signing_key, algorithm='RS256')
 print(f"JWT:  ", token)
 
 # Verify the token with the public key
