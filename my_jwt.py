@@ -48,7 +48,7 @@ jwt_token = '***'
 public_key = 'siyaajhawar-app.2023-02-22.private-key.pem'
 
 # Decode and verify JWT token
-decoded_jwt = jwt.decode(jwt_token, key=public_key, algorithms=['HS256'])
+decoded_jwt = jwt.decode(jwt_token, key=public_key, algorithms=['RS256'])
 
 print(decoded_jwt)
 
