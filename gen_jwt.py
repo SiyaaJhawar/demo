@@ -11,7 +11,7 @@ with open('siyaajhawar-app.2023-02-22.private-key.pem', 'r') as f:
 # Set the payload
 payload = {
     'iat': datetime.datetime.utcnow(),
-    'exp': datetime.datetime.utcnow() + datetime.timedelta(days=1)
+    'exp': datetime.datetime.utcnow() + datetime.timedelta(days=1),
     'iss': app_id
 }
 
@@ -25,7 +25,7 @@ from datetime import datetime, timedelta
 # Define the payload of the token
 payload = {
     'iat': datetime.datetime.utcnow(),
-    'exp': datetime.datetime.utcnow() + datetime.timedelta(days=1)
+    'exp': datetime.datetime.utcnow() + datetime.timedelta(days=1),
     'iss':  '292855' # token expiration time
 }
 
