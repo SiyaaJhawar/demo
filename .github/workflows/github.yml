@@ -20,7 +20,7 @@ jobs:
         # pip install JWT
     - run : |
          curl -i -X POST \
-           -H "Authorization: Bearer my_jwt.py" \
+           -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzcyNjQwMTgsImV4cCI6MTY3NzM1MDQxOCwiaXNzIjoiMjkyODU1In0.SF3AwsWBDM_OQKsZgfGM6aKld8wGTy_NUhldcd1_BCHOLwp_fc8jwbhpG_nJlwM_q_lDnt3GRgzm_7u2Yf0GQn0pX7DKJDfSmwCfJhREObupoQNub4bXQJ7lGljcnbjENR7ykcP-GSDst4YUDieOWnU7udgKhgr3PZ3vOn4iblf9Ja1iDNmaxaA_XAhDUtRORmpR4gFPPW41qtgsmikfSaJrYcF0yXbmiX0rHopU3VL8QysHeR0o7_Ti68HHdDVbOxE7bnE-rkTN_fEoWvHx3-aVpvL8AZbGTMLdlLDyt4-p4-TZ9tedwxlRZvcC_3ic4CnpOxO-4JKisZh3l7WNVg" \
            -H "Accept: application/vnd.github+json" \
             https://api.github.com/app/installations/34148902/access_tokens
        
@@ -29,5 +29,5 @@ jobs:
         PYTHONPATH: /usr/local/lib/python3.8/site-packages
     - name: Generate JWT
       run: |
-        python3 gen_jwt.py
+        #python3 gen_jwt.py
     
