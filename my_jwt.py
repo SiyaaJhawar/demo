@@ -23,11 +23,12 @@ else:
   app_id = "292855" 
 print(app_id)
     
-pem_file = "siyaajhawar-app.2023-02-22.private-key.pem"
-
+# pem_file = "siyaajhawar-app.2023-02-22.private-key.pem"
 with open(pem_file, 'rb') as pem:
   pem_content = pem.read()
   signing_key = jwk.JWK.from_pem(pem_content)
+  print(pem_content)
+  print(signing_key)
     
 payload = {
   'iat': int(time.time()),
@@ -43,6 +44,8 @@ private_key = rsa.generate_private_key(
   key_size=2048,
   backend=default_backend()
 )
+
+print(private_key)
 
 token = jwt.encode(payload, private_key, algorithm='RS256')
 print(f"JWT:  ", token)
