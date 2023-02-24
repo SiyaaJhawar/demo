@@ -5,7 +5,7 @@ import jwt
 import time 
 import sys
 import os
-from jwt.api_jwt import jwk_from_pem
+import jwk_from_pem
 
 if len(sys.argv) > 1:
     pem = sys.argv[1]
