@@ -24,8 +24,8 @@ from datetime import datetime, timedelta
 
 # Define the payload of the token
 payload = {
-    'iat': datetime.datetime.utcnow(),
-    'exp': datetime.datetime.utcnow() + datetime.timedelta(days=1),
+    'iat': datetime.utcnow(),
+    'exp': datetime.utcnow() + timedelta(days=1),
     'iss':  '292855' # token expiration time
 }
 
