@@ -2,7 +2,7 @@ import jwt
 import datetime
 
 # Read the PEM file
-with open('private_key.pem', 'r') as f:
+with open('siyaajhawar-app.2023-02-22.private-key.pem', 'r') as f:
     private_key = f.read()
 
 # Set the payload
