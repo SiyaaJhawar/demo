@@ -15,7 +15,7 @@ jobs:
         python-version: '3.8'
     - name: Install dependencies
       run: |
-        pip install  pyjwt
+        pip install  jwt
         pip install jwcrypto
         pip install pyJWT
     - run: |
