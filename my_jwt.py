@@ -7,8 +7,8 @@ import time
 import sys
 import os
 from jwcrypto import jwk
-from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives.asymmetric import rsa
+#from cryptography.hazmat.backends import default_backend
+#from cryptography.hazmat.primitives.asymmetric import rsa
 
 
 
@@ -45,7 +45,7 @@ payload = {
  # backend=default_backend()
 #)
 
-print(private_key)
+#print(private_key)
 jwt_instance = jwt.JWT()
 token = jwt_instance.encode(payload, signing_key, alg='RS256')
 print(f"JWT:  ", token)
