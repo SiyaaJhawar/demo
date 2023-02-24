@@ -39,11 +39,11 @@ payload = {
 }
 
 # Create JWT
-private_key = rsa.generate_private_key(
-  public_exponent=65537,
-  key_size=2048,
-  backend=default_backend()
-)
+#private_key = rsa.generate_private_key(
+  #public_exponent=65537,
+ # key_size=2048,
+ # backend=default_backend()
+#)
 
 print(private_key)
 jwt_instance = jwt.JWT()
