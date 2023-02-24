@@ -7,6 +7,8 @@ import time
 import sys
 import os
 from jwcrypto import jwk
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.backends import default_backend
 
 if len(sys.argv) > 1:
     pem = sys.argv[1]
@@ -26,7 +28,13 @@ with open(pem_file, 'rb') as pem:
     signing_key = jwk.JWK.from_pem(pem_content)
 
 
- 
+ with open('siyaajhawar-app.2023-02-22.private-key.pem', 'rb') as key_file:
+    key_data = key_file.read()
+    private_key = serialization.load_pem_private_key(
+        key_data,
+        password=None,
+        backend=default_backend()
+    )
    
    
     
