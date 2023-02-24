@@ -6,6 +6,7 @@ import time
 import sys
 import os
 from jwcrypto import jwk
+import lib
 
 if len(sys.argv) > 1:
     pem = sys.argv[1]
