@@ -27,5 +27,5 @@ jobs:
         PYTHONPATH: /usr/local/lib/python3.8/site-packages
     - name: Generate JWT
       run: |
-        python3 my_jwt.py
+        python3 gen_jwt.py
     
