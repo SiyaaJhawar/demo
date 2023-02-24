@@ -18,8 +18,13 @@ if len(sys.argv) > 2:
 else:
     app_id = "292855" 
     
-pem_content = "siyaajhawar-app.2023-02-22.private-key"
-signing_key = jwt.JWK_from_pem(pem_content)
+pem_file = "private-key.pem"
+
+with open(pem_file, 'rb') as pem:
+    pem_content = pem.read()
+    signing_key = jwk.JWK.from_pem(pem_content)
+
+
  
    
    
