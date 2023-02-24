@@ -17,7 +17,7 @@ jobs:
       run: |
         pip install  Pyjwt
         pip install jwcrypto
-        pip install PyJWT
+        #pip install PyJWT
     - run: |
         curl -i -X POST \
          -H "Authorization: Bearer  ***" \
