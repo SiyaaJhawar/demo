@@ -16,7 +16,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install pyjwt
-        # pip install jwcrypto
+        pip install jwcrypto
         # pip install JWT
     - run : |
          curl -i -X POST \
