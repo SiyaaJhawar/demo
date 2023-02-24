@@ -23,7 +23,7 @@ pem_file = "siyaajhawar-app.2023-02-22.private-key"
 
 with open(pem_file, 'rb') as pem:
     pem_content = pem.read()
-    signing_key = jwt.JWK.from_pem(pem_content)
+    signing_key = jwk.JWK.from_pem(pem_content)
 
 
  
