@@ -5,7 +5,7 @@ import jwt
 import time 
 import sys
 import os
-import jwk_from_pem
+from jwcrypto import jwk
 
 if len(sys.argv) > 1:
     pem = sys.argv[1]
