@@ -39,7 +39,7 @@ payload = {
     'exp': int(time.time()) + 600, 
     # GitHub App's identifier
     'iss': app_id
-    'sub': 1234567890
+  
 }
     
 # Create JWT
