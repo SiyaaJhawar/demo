@@ -26,7 +26,7 @@ print(app_id)
 # pem_file = "siyaajhawar-app.2023-02-22.private-key.pem"
 with open(pem_file, 'rb') as pem:
   pem_content = pem.read()
- signing_key = jwt.jwk_from_pem(pem_content)
+  signing_key = jwt.jwk_from_pem(pem_content)
   print(pem_content)
   print(signing_key)
     
