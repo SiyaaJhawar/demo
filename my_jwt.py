@@ -51,13 +51,13 @@ payload = {
  # key_size=2048,
  # backend=default_backend()
 #)
-key = RSAJWK.generate(kty='RSA', size=2048)
+#key = RSAJWK.generate(kty='RSA', size=2048)
 
 # Export the public key
-public_key = key.export_public()
+#public_key = key.export_public()
 
 # Export the private key
-private_key = key.export_private()
+#private_key = key.export_private()
 
 #print(private_key)
 jwt_instance = jwt.JWT()
