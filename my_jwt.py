@@ -13,14 +13,14 @@ if len(sys.argv) > 1:
     pem = sys.argv[1]
 
 else:
-    with open('siyaajhawar-app.2023-02-22.private-key', 'r') as f:
+    with open('siyaajhawar-app.2023-02-22.private-key.pem', 'r') as f:
      pem = f.read()  
 if len(sys.argv) > 2:
     app_id = sys.argv[2]
 else:
     app_id = "292855" 
     
-pem_file = "siyaajhawar-app.2023-02-22.private-key"
+pem_file = "siyaajhawar-app.2023-02-22.private-key.pem"
 
 with open(pem_file, 'rb') as pem:
     pem_content = pem.read()
