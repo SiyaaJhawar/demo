@@ -6,7 +6,6 @@ import time
 import sys
 import os
 from jwcrypto import jwk
-importlib
 
 if len(sys.argv) > 1:
     pem = sys.argv[1]
@@ -45,6 +44,6 @@ jwt_instance = jwt.JWT()
 encoded_jwt = jwt_instance.encode(payload, 'signing_key', alg='RS256')
      
 print(f"JWT:  ", encoded_jwt)
-sys.exit()
+
 
 
