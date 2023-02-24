@@ -1,6 +1,7 @@
 
 
-
+import jwt
+import JWT
 
 import time 
 import sys
