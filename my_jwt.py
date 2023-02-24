@@ -7,6 +7,7 @@ import time
 import sys
 import os
 from jwcrypto import jwk
+from jwt.jwk import RSAJWK
 #from cryptography.hazmat.backends import default_backend
 #from cryptography.hazmat.primitives.asymmetric import rsa
 
@@ -44,6 +45,13 @@ payload = {
  # key_size=2048,
  # backend=default_backend()
 #)
+key = RSAJWK.generate(kty='RSA', size=2048)
+
+# Export the public key
+public_key = key.export_public()
+
+# Export the private key
+private_key = key.export_private()
 
 #print(private_key)
 jwt_instance = jwt.JWT()
