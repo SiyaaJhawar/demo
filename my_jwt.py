@@ -48,6 +48,6 @@ payload = {
 #print(private_key)
 jwt_instance = jwt.JWT()
 encoded_jwt = jwt_instance.encode(payload, signing_key, alg='RS256')
-print(f"JWT: ")
+print(f"JWT: "encoded_jwt)
 
 
