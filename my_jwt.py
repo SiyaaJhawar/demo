@@ -16,19 +16,25 @@ from jwt.jwk import RSAJWK
 if len(sys.argv) > 1:
   pem_file = sys.argv[1]
 else:
-  pem_file = "siyaajhawar-app.2023-02-22.private-key.pem"
-print(pem_file)
+ # pem_file = "siyaajhawar-app.2023-02-22.private-key.pem"
+#print(pem_file)
+
+
+ pem = "siyaajhawar-app.2023-02-22.private-key.pem"   
+# Get the App ID
 if len(sys.argv) > 2:
-  app_id = sys.argv[2]
+    app_id = sys.argv[2]
 else:
-  app_id = "292855" 
-print(app_id)
+    app_id = input("Enter your APP ID: ") 
+# Open PEM
+with open(pem, 'rb') as pem_file:
+    signing_key = jwt.jwk_from_pem(pem_file.read())
     
 # pem_file = "siyaajhawar-app.2023-02-22.private-key.pem"
-with open(pem_file, 'rb') as pem:
-  pem_content = pem.read()
-  signing_key = jwt.jwk_from_pem(pem_content)
-  print(pem_content)
+#with open(pem_file, 'rb') as pem:
+#  pem_content = pem.read()
+ # signing_key = jwt.jwk_from_pem(pem_content)
+  #print(pem_content)
   print(signing_key)
     
 payload = {
