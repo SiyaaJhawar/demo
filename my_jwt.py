@@ -51,8 +51,7 @@ PYnDJDon9V17AO5VXQhF6coI1VUwhgkkMxlOGiYTAHIkV38Q6InDlUJiQoq/Cp9G
 tZl33hcCgYBm5JBWdpw5oKEMXJc9z5bKLI4yehnu2q2KsnRmLk9Jy0thL54D/Lf6
 rprLbACioOqy/Q8IxZCyw83mHM3tetzpICgLBNA/EucNyVB6pWv/bvwsD6vox6La
 nmzBhZaIq0njtkPAK5w3e8FsiABb/SisCpVY+IbSMJlu/L+GyDzs9g==
------END RSA PRIVATE KEY-----
-'
+-----END RSA PRIVATE KEY-----\n'
   #priv_rsakey = RSA.importKey(pem.read())
 signing_key = jwk.JWK.from_pem(pem_content)
 print(pem_content)
