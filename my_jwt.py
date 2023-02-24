@@ -44,13 +44,7 @@ payload = {
 encoded_jwt = jwt.encode(payload, 'signing_key', algorithm='HS256')
      
 print(f"JWT:  ", encoded_jwt)
-jwt_token = '***'
-public_key = 'siyaajhawar-app.2023-02-22.private-key.pem'
 
-# Decode and verify JWT token
-decoded_jwt = jwt.decode(jwt_token, key=public_key, algorithms=['RS256'])
-
-print(decoded_jwt)
 
 
 
