@@ -28,13 +28,6 @@ with open(pem_file, 'rb') as pem:
     signing_key = jwk.JWK.from_pem(pem_content)
 
 
-   with open('siyaajhawar-app.2023-02-22.private-key.pem', 'rb') as key_file:
-     key_data = key_file.read()
-      private_key = serialization.load_pem_private_key(
-        key_data,
-        password=None,
-        backend=default_backend()
-    )
    
    
     
@@ -50,7 +43,7 @@ payload = {
     
 # Create JWT
 
-encoded_jwt = jwt.encode(payload, 'signing_key', algorithm='RS256')
+encoded_jwt = jwt.encode(payload, 'signing_key.key', algorithm='RS256')
      
 print(f"JWT:  ", encoded_jwt)
 
