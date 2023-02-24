@@ -24,12 +24,12 @@ else:
     
 pem_file = "siyaajhawar-app.2023-02-22.private-key.pem"
 
-with open(pem_file, 'rb') as pem:
-    pem_content = pem.read()
-    signing_key = jwk.JWK.from_pem(pem_content)
+  with open(pem_file, 'rb') as pem:
+     pem_content = pem.read()
+     signing_key = jwk.JWK.from_pem(pem_content)
 
 
- with open('siyaajhawar-app.2023-02-22.private-key.pem', 'rb') as key_file:
+  with open('siyaajhawar-app.2023-02-22.private-key.pem', 'rb') as key_file:
     key_data = key_file.read()
     private_key = serialization.load_pem_private_key(
         key_data,
