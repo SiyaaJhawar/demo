@@ -5,6 +5,7 @@ import jwt
 import time 
 import sys
 import os
+from jwt.api_jwt import jwk_from_pem
 
 if len(sys.argv) > 1:
     pem = sys.argv[1]
@@ -18,7 +19,7 @@ else:
     app_id = "292855" 
     
 pem_content = "siyaajhawar-app.2023-02-22.private-key"
-signing_key = jwt.jwk_from_pem(pem_content.encode())
+signing_key = jwk_from_pem(pem_content.encode())
  
    
    
