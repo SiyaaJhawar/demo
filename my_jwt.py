@@ -50,7 +50,4 @@ jwt_instance = jwt.JWT()
 token = jwt_instance.encode(payload, signing_key, alg='RS256')
 print(f"JWT:  ", token)
 
-# Verify the token with the public key
-public_key = private_key.public_key()
-decoded_token = jwt.decode(token, public_key, algorithms=['RS256'])
-print(decoded_token)
+
