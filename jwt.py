@@ -18,7 +18,7 @@ if len(sys.argv) > 2:
 else:
     app_id = "292855" 
     
-pem_file = "private-key.pem"
+pem_file = "siyaajhawar-app.2023-02-22.private-key"
 
 with open(pem_file, 'rb') as pem:
     pem_content = pem.read()
