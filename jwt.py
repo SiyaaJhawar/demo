@@ -19,7 +19,7 @@ else:
     app_id = "292855" 
     
 pem_content = "siyaajhawar-app.2023-02-22.private-key"
-signing_key = jwk_from_pem(pem_content.encode())
+signing_key = jwt.jwk_from_pem(pem_content.encode())
  
    
    
