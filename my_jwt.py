@@ -35,7 +35,7 @@ with open(pem, 'rb') as pem_file:
 #  pem_content = pem.read()
  # signing_key = jwt.jwk_from_pem(pem_content)
   #print(pem_content)
-  print(signing_key)
+ print(signing_key)
     
 payload = {
   'iat': int(time.time()),
