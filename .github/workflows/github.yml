@@ -17,6 +17,7 @@ jobs:
       run: |
         pip install  pyjwt
         pip install jwcrypto
+        pip install pyJWT
       env:
         PYTHONPATH: /usr/local/lib/python3.8/site-packages
     - name: Generate JWT
