@@ -7,6 +7,8 @@ import time
 import sys
 import os
 from jwcrypto import jwk
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.backends import default_backend
 
 
 if len(sys.argv) > 1:
