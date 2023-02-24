@@ -14,8 +14,7 @@ if len(sys.argv) > 1:
     pem = sys.argv[1]
 
 else:
-    with open('siyaajhawar-app.2023-02-22.private-key.pem', 'r') as f:
-     pem = f.read()  
+  pem_file = "siyaajhawar-app.2023-02-22.private-key.pem"
 if len(sys.argv) > 2:
     app_id = sys.argv[2]
 else:
@@ -45,6 +44,13 @@ payload = {
 encoded_jwt = jwt.encode(payload, 'signing_key', algorithm='HS256')
      
 print(f"JWT:  ", encoded_jwt)
+jwt_token = ''
+public_key = 'siyaajhawar-app.2023-02-22.private-key.pem'
+
+# Decode and verify JWT token
+decoded_jwt = jwt.decode(jwt_token, key=public_key, algorithms=['RS256'])
+
+print(decoded_jwt)
 
 
 
