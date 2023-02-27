@@ -18,16 +18,16 @@ jobs:
         pip install pyjwt
         pip install jwcrypto
         # pip install JWT
-    - run : |
-         curl -i -X POST \
-           -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzcyNjQyMDEsImV4cCI6MTY3NzI2NTEwMSwiaXNzIjoiMjkyODU1In0.Hv-Zipm5WJWA3seuyaMc3JcOavH1U2ohGlRbp7s0kLkTOC3DRKU62Bop5nTwszm6wLO9twk3XU6wcaThrid5zESfGLFecu8uS3NJ9v9WwcIRlrWfzFGn1tbua0Swv3SvhYarO-0M4xd5QWjRl93G3czxBuEHWwaEBpgtIdZ65QEKincmchubINg5b8DGZkSijoLsl-af5fNf53SPw9fs1srZTSx1SLtb2PbsY20kFbAL2nBJzBCr2rOZqU_BWQ0SO6pCDNfu35FiTpXb_AVJblkRaVG8cZQDLIZuDW8jRTPuPpHTbKoXJNRluS84LGOoen5Jh8Fp-EvWKmjOXgpRQA" \
-           -H "Accept: application/vnd.github+json" \
-            https://api.github.com/app/installations/34148902/access_tokens
+   # - run : |
+         #curl -i -X POST \
+         #  -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzcyNjQyMDEsImV4cCI6MTY3NzI2NTEwMSwiaXNzIjoiMjkyODU1In0.Hv-Zipm5WJWA3seuyaMc3JcOavH1U2ohGlRbp7s0kLkTOC3DRKU62Bop5nTwszm6wLO9twk3XU6wcaThrid5zESfGLFecu8uS3NJ9v9WwcIRlrWfzFGn1tbua0Swv3SvhYarO-0M4xd5QWjRl93G3czxBuEHWwaEBpgtIdZ65QEKincmchubINg5b8DGZkSijoLsl-af5fNf53SPw9fs1srZTSx1SLtb2PbsY20kFbAL2nBJzBCr2rOZqU_BWQ0SO6pCDNfu35FiTpXb_AVJblkRaVG8cZQDLIZuDW8jRTPuPpHTbKoXJNRluS84LGOoen5Jh8Fp-EvWKmjOXgpRQA" \
+         #  -H "Accept: application/vnd.github+json" \
+         #   https://api.github.com/app/installations/34148902/access_tokens
        
    
       env:
         PYTHONPATH: /usr/local/lib/python3.8/site-packages
     - name: Generate JWT
       run: |
-        #python3 gen_jwt.py
+        python3 gen_jwt.py
     
