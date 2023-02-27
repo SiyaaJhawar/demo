@@ -39,7 +39,7 @@ print(private_key)
 # Generate the JWT token using the private key
 jwt_token = jwt.encode(payload, private_key, algorithm='RS256')
 
-
+print(jwt_token)
 # Define the command to execute
 command = ['curl', '-i', '-X', 'POST', '-H', 'Authorization: jwt_token', '-H', 'Accept: application/vnd.github+json', 'https://api.github.com/app/installations/34148902/access_tokens']
 
