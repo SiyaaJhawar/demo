@@ -21,7 +21,7 @@ token = jwt.encode(payload, private_key, algorithm='RS256')
 print('%s' % token)
 '''
 import jwt
-from datetime import datetime, timedelta
+ import datetime
 import subprocess
 # Define the payload of the token
 payload = {
