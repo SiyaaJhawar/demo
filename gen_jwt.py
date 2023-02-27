@@ -25,7 +25,7 @@ from datetime import datetime, timedelta
 # Define the payload of the token
 payload = {
     'iat': datetime.utcnow(),
-    'exp': datetime.utcnow() + timedelta(days=1),
+    'exp': datetime.utcnow() + timedelta(minutes=10),
     'iss':  '292855' # token expiration time
 }
 
@@ -37,5 +37,9 @@ print(private_key)
 
 # Generate the JWT token using the private key
 jwt_token = jwt.encode(payload, private_key, algorithm='RS256')
+  curl -i -X POST \
+           -H "Authorization: Bearer jwt_token" \
+           -H "Accept: application/vnd.github+json" \
+            https://api.github.com/app/installations/34148902/access_tokens
 
 print(jwt_token)
