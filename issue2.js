@@ -4,7 +4,7 @@ const axios = require('axios');
 // Using import statement
 
 
-octokit.request('POST /repos/:owner/:repo/issues', {
+axios.request('POST /repos/:owner/:repo/issues', {
   owner: 'SiyaaJhawar',
   repo: 'demo',
   title: 'Hi',
