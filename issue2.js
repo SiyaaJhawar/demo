@@ -2,7 +2,6 @@
 const axios = require('axios');
 
 // Using import statement
-import axios from 'axios';
 
 
 octokit.request('POST /repos/:owner/:repo/issues', {
