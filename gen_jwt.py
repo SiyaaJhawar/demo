@@ -2,6 +2,7 @@
 import jwt
 import datetime
 
+
 app_id = '292855'
 
 # Read the PEM file
@@ -21,7 +22,7 @@ print('%s' % token)
 '''
 import jwt
 from datetime import datetime, timedelta
-
+import subprocess
 # Define the payload of the token
 payload = {
     'iat': datetime.utcnow(),
@@ -37,6 +38,10 @@ print(private_key)
 
 # Generate the JWT token using the private key
 jwt_token = jwt.encode(payload, private_key, algorithm='RS256')
-curl -i -X POST \ -H "Authorization: Bearer jwt_token" \ -H "Accept: application/vnd.github+json" \https://api.github.com/app/installations/34148902/access_tokens
 
-print(jwt_token)
+
+# Define the command to execute
+command = ['curl', '-i', '-X', 'POST', '-H', 'Authorization: jwt_token', '-H', 'Accept: application/vnd.github+json', 'https://api.github.com/app/installations/34148902/access_tokens']
+
+# Execute the command
+result = subprocess.run(command, capture_output=True)
