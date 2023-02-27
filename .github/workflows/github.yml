@@ -23,7 +23,7 @@ jobs:
                -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOiAxNjc3NDgxMzE3LCAiZXhwIjogMTY3NzQ4MTkxNywgImlzcyI6IDI5Mjg1NX0.n7U1MHc_vBIH9nuX_CWmb1NUDxaVuavKv3zonBe9g2t_1ZpSZI-PCt-Mpy_LZCgDu-UXoSoyOYwgkyFlgN5lfn_7vNNu8A3GHxL8zEShj0ARAg1z-O7K6b8Qu3EA8qhRak-rR7NudUwFH9ZcxnKb4IIzQoR29JAETY3HCkjE6yotKCD71J1ugfNlqPoM643iobCrQURJ-2P3GWfcieYVdP7xI_DEfCt28gJHGJXoDZukF3IpqpdAgR-YZv-txCoDzcjwVc0sDfKwQ3eGxMDLgOPjaOWJ6V4z7hNO1P_7lqz3UDEwcMXT4vKX7zdefn3QJsjiBIhHlFIdvwxkn51oaQ"\
                -H "Accept: application/vnd.github+json" \
             https://api.github.com/app/installations/34148902/access_tokens
-          curl -i -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ***" -H "X-GitHub-Api-Version: 2022-11-28"   https://api.github.com/repos/SiyaaJhawar/demo/issues
+          curl -i -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ghs_6pckKFG4kyqxg0gcfhfBtEqIVZdW013baeHN" -H "X-GitHub-Api-Version: 2022-11-28"   https://api.github.com/repos/SiyaaJhawar/demo/issues
        
    
       env:
