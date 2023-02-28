@@ -32,7 +32,7 @@ jobs:
         -H "Authorization: Bearer ghs_JuTYGCa7xKPy9sgAAZH127ApnlUeCA1PiqrG" \
          -H "Accept: application/vnd.github+json" \
          https://api.github.com/installation/repositories
-        git clone https://github.com/SiyaaJhawar/github-app-template.git SiyaaJhawar app
+        git clone https://github.com/SiyaaJhawar/github-app-template.git SiyaaJhawarapp
   #  - run : gem install jwt 
 
   #  - run : node  node.js
