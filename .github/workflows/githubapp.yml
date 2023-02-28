@@ -28,9 +28,9 @@ jobs:
     - run : npm install axios
     - run : |
        $ curl -i \
--H "Authorization: Bearer ghs_JuTYGCa7xKPy9sgAAZH127ApnlUeCA1PiqrG" \
--H "Accept: application/vnd.github+json" \
-  https://api.github.com/installation/repositories
+        -H "Authorization: Bearer ghs_JuTYGCa7xKPy9sgAAZH127ApnlUeCA1PiqrG" \
+         -H "Accept: application/vnd.github+json" \
+         https://api.github.com/installation/repositories
   #  - run : gem install jwt 
 
   #  - run : node  node.js
