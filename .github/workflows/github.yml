@@ -17,8 +17,8 @@ jobs:
       run: |
         pip install pyjwt
         pip install jwcrypto
-        npm install --global smee-client
-        smee --url https://smee.io/qrfeVRbFbffd6vD --path /event_handler --port 3000
+       # npm install --global smee-client
+       # smee --url https://smee.io/qrfeVRbFbffd6vD --path /event_handler --port 3000
         # pip install JWT
     - run : |
           curl -i -X POST \
