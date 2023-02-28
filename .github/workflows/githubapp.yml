@@ -27,7 +27,10 @@ jobs:
     - run : npm install jsonwebtoken
     - run : npm install axios
     - run : |
-       curl -i -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ghs_7ujUOOf7ZM0pWLvS1YT31obo34gKNq2NT4hf" -H "X-GitHub-Api-Version: 2022-11-28"  https://api.github.com/repos/SiyaaJhawar/demo/issues
+       $ curl -i \
+-H "Authorization: Bearer ghs_JuTYGCa7xKPy9sgAAZH127ApnlUeCA1PiqrG" \
+-H "Accept: application/vnd.github+json" \
+  https://api.github.com/installation/repositories
   #  - run : gem install jwt 
 
   #  - run : node  node.js
