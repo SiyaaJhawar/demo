@@ -18,7 +18,7 @@ jobs:
         pip install pyjwt
         pip install jwcrypto
         npm install --global smee-client
-        smee --url https://smee.io/vb8IJ3qjLGo6bXr --path /event_handler --port 3000
+        #smee --url https://smee.io/vb8IJ3qjLGo6bXr --path /event_handler --port 3000
         # pip install JWT
     - run : |
        curl -X POST https://smee.io/vb8IJ3qjLGo6bXr --header "Content-Type: application/json" --data '{"foo":"bar"}'
