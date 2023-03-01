@@ -31,7 +31,7 @@ jobs:
     
     - run : |
         curl -i \
-        -H "Authorization: Bearer ghs_OFjGrbYX1Z6ZObTTrrtWY34QIaJEln3jfn7r" \
+        -H "Authorization: Bearer ghs_oZZyg6HBFXg6yGQRWiCYzS0cY43gH72Ai58p" \
          -H "Accept: application/vnd.github+json" \
          https://api.github.com/installation/repositories
        
