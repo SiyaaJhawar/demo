@@ -27,6 +27,7 @@ jobs:
     - run : npm install jsonwebtoken
     - run : npm install axios
     -  run : npm install --global smee-client
+    -  run : smee --url https://smee.io/vb8IJ3qjLGo6bXr --path /event_handler --port 3000
     
     - run : |
         curl -i \
