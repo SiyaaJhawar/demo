@@ -1,6 +1,7 @@
 name: "githubapp"
 on:
   push:
+  pull_request:
     tags:
       - '**'
   workflow_dispatch:
@@ -13,17 +14,7 @@ on:
 
 jobs:
    called_workflow:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
-        -name: "Hit a webhook"
-        -uses: https://github.com/SiyaaJhawar/learning-@main
+    uses: https://github.com/SiyaaJhawar/learning-/blob/main/.github/workflows/webhook.yml@main
         
 
    
