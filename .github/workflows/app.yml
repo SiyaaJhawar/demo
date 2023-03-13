@@ -12,7 +12,7 @@ on:
 
 
 jobs:
-  create-issue:
+   called_workflow:
     runs-on: ubuntu-latest
 
     steps:
