@@ -22,9 +22,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
-        -name: Get file json.js
+        -name: "Hit a webhook"
+        -uses: https://github.com/SiyaaJhawar/learning-@main
         
 
    
     
-    - run : node issue2.js
+    
