@@ -4,8 +4,7 @@ on:
  push:
    branches: [ "main" ] 
 
-    
-workflow_dispatch: 
+ workflow_dispatch: 
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -17,7 +16,7 @@ jobs:
      - uses: actions/checkout@v3
       # Call the custom action
      - name : Trigger workflow
-        uses:  SiyaaJhawar/learning-@main
+       uses:  SiyaaJhawar/learning-@main
 
       
    
