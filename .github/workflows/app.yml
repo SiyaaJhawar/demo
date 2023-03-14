@@ -15,7 +15,7 @@ jobs:
     -  name: Checkout
     -  uses: actions/checkout@v3
     - name: Trigger webhook workflow
-    - uses: SiyaaJhawar/learning-/blob/main/.github/workflows/webhook.yml@main
+    - uses:  SiyaaJhawar/learning-/actions/workflows/webhook.yml@main
       with:
           event-type: trigger-webhook
      
