@@ -14,10 +14,10 @@ jobs:
     steps:
       - name: Trigger webhook workflow
       - uses: actions/checkout@v3
-      - uses: SiyaaJhawar/learning-/actions/workflows/webhook.yml@main
+     
         with:
        
-          repository: SiyaaJhawar/learning-
+          repository: SiyaaJhawar/learning-/actions/workflows/webhook.yml@main
           event-type: trigger-webhook
         
 
