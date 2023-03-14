@@ -5,16 +5,17 @@ on:
   pull_request:
     tags:
       - '**'
-  repository_dispatch:
+  workflow_dispatch:
    
 
 jobs:
   call_another_workflow:
     runs-on: ubuntu-latest
     steps:
-     - uses: actions/checkout@v3
-     - name: Trigger webhook workflow
-     - uses: https://github.com/SiyaaJhawar/learning-/blob/main/.github/workflows/webhook.yml@main
+    -  name: Checkout
+    -   uses: actions/checkout@v3
+    - name: Trigger webhook workflow
+    - uses: https://github.com/SiyaaJhawar/learning-/blob/main/.github/workflows/webhook.yml@main
      
      
        with:
