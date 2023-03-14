@@ -16,8 +16,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       # Call the custom action
-      - name: custom action
-        uses:  SiyaaJhawar/learning-@main
+     
+       - uses:  SiyaaJhawar/learning-@main
 
       
    
