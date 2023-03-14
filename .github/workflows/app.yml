@@ -14,7 +14,7 @@ jobs:
     steps:
      - uses: actions/checkout@v3
      - name: Trigger webhook workflow
-     - uses: SiyaaJhawar/learning-/actions/workflows/webhook.yml@main
+     - uses: https://github.com/SiyaaJhawar/learning-/blob/main/.github/workflows/webhook.yml@main
      
      
        with:
