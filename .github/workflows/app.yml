@@ -14,8 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
      
-      - name: Trigger workflow
-        uses: SiyaaJhawar/learning-@main
+      
 
    
     
