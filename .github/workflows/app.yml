@@ -5,8 +5,8 @@ on:
   pull_request:
     tags:
       - '**'
-  repository_dispatch:
-    types: [trigger-webhook]
+  workflow_dispatch:
+   
 
 jobs:
   call_another_workflow:
