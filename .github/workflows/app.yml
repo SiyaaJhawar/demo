@@ -7,9 +7,12 @@ on:
 
 jobs:
  
-  build:
-    
+   first-job:
+    name: Build with Node
     runs-on: ubuntu-latest
+  
+    
+   
     steps:
       - name: Checkout
         uses: actions/checkout@v3
