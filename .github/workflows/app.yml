@@ -19,7 +19,7 @@ jobs:
      
        with:
        
-        repository: SiyaaJhawar/learning-/
+      
         event-type: trigger-webhook
         
 
