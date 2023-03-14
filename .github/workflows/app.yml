@@ -7,9 +7,8 @@ on:
 
 jobs:
  
-   first-job:
-    name: Build with Node
-    runs-on: ubuntu-latest
+   build:
+   runs-on: ubuntu-latest
   
     
    
