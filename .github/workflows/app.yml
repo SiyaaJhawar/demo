@@ -12,13 +12,15 @@ jobs:
   call_another_workflow:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger webhook workflow
-      - uses: actions/checkout@v3
+     - uses: actions/checkout@v3
+     - name: Trigger webhook workflow
+     - uses: SiyaaJhawar/learning-/actions/workflows/webhook.yml@main
      
-        with:
+     
+       with:
        
-          repository: SiyaaJhawar/learning-/actions/workflows/webhook.yml@main
-          event-type: trigger-webhook
+        repository: SiyaaJhawar/learning-/
+        event-type: trigger-webhook
         
 
    
