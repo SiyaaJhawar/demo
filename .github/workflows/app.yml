@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger webhook workflow
-        uses: SiyaaJhawar/learning-/actions/workflows/webhook.yml@main
+      - uses: actions/checkout@v3
+      - uses: SiyaaJhawar/learning-/actions/workflows/webhook.yml@main
         with:
        
           repository: SiyaaJhawar/learning-
